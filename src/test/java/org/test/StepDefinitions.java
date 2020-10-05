@@ -59,8 +59,7 @@ public class StepDefinitions {
         String expectedURL = "http://www.inmrobo.tk/accounts/signup/";
         // se as URLs forem iguais o teste foi aprovdo
         assertEquals(expectedURL,currentURL);
-        // encerra a sessão
-        driver.close();
+
     }
 
     @Given("Eu esteja na tela de cadastramento")
@@ -212,7 +211,6 @@ public class StepDefinitions {
         // se a URL está correta o passo foi aprovado
         if(chkText=="Cadastramento") {
             assertEquals(expectedURL1, currentURL);
-            driver.close();
         }
         else if (chkText=="Login") {
             assertEquals(expectedURL2, currentURL);
@@ -453,9 +451,7 @@ public class StepDefinitions {
                 assertTrue(false);
         }
     }
-        // /html/body/div/div[1]/div
-        // /html/body/div/div[1]/div
-        //
+
     @Then("O sistema mostrara uma mensagem de {string} no cadastramento")
     public void o_sistema_mostrara_uma_mensagem_de_sucesso_no_cadastramento(String msgTxt) {
         // localiza o elemento pelo xpath
@@ -467,6 +463,12 @@ public class StepDefinitions {
         // se está visível e contém o texto correto, o passo está OK
         assertTrue(isDisplayed && hasTxt);
 
+    }
+
+    @Then("Eu fecho o aplicativo encerrando o teste")
+    public void eu_fecho_o_aplicativo() {
+        // encerra a sessão
+        driver.close();
     }
 
 }

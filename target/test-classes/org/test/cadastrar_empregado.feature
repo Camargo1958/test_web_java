@@ -5,7 +5,7 @@ Feature: Cadastrar novo empregado
     And O sistema apresentar a tela do Cadastro de "empregados"
     When Eu selecionar o item "NOVO FUNCIONÁRIO" no menu
     Then O sistema apresentara a tela de cadastramento de novo empregado
-
+    And Eu fecho o aplicativo encerrando o teste
 
   Scenario: Cadastrar novo empregado CLT com sucesso
     Given Eu realize o login com sucesso com as credenciais "nelson.rodrigues@test.xx" e "123456"
@@ -20,6 +20,7 @@ Feature: Cadastrar novo empregado
     And Eu acionar o botao "Enviar"
     Then O sistema apresentara a tela de cadastramento de novo empregado
     And O sistema mostrara uma mensagem de "SUCESSO" no cadastramento
+    And Eu fecho o aplicativo encerrando o teste
 
   Scenario: Cadastrar novo empregado PJ com sucesso
     Given Eu realize o login com sucesso com as credenciais "nelson.rodrigues@test.xx" e "123456"
@@ -34,3 +35,4 @@ Feature: Cadastrar novo empregado
     And Eu acionar o botao "Enviar"
     Then O sistema apresentara a tela de cadastramento de novo empregado
     And O sistema mostrara uma mensagem de "SUCESSO" no cadastramento
+    And Eu fecho o aplicativo encerrando o teste
